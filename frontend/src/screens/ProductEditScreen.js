@@ -85,6 +85,7 @@ export default function ProductEditScreen(props) {
     }
   };
 
+
   return (
     <div>
       <form className="form" onSubmit={submitHandler}>
@@ -142,6 +143,7 @@ export default function ProductEditScreen(props) {
                 <MessageBox variant="danger">{errorUpload}</MessageBox>
               )}
             </div>
+
             <div>
               <label htmlFor="category">Category</label>
               <input

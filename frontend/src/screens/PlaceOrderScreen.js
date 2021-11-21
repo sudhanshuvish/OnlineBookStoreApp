@@ -18,7 +18,7 @@ export default function PlaceOrderScreen(props) {
   cart.itemsPrice = toPrice(
     cart.cartItems.reduce((a, c) => a + c.qty * c.price, 0)
   );
-  cart.shippingPrice = cart.itemsPrice > 100 ? toPrice(0) : toPrice(10);
+  cart.shippingPrice = cart.itemsPrice > 100 ? toPrice(0) : toPrice(0.01);
   cart.taxPrice = toPrice(0.15 * cart.itemsPrice);
   cart.totalPrice = cart.itemsPrice + cart.shippingPrice + cart.taxPrice;
   const dispatch = useDispatch();
@@ -135,7 +135,11 @@ export default function PlaceOrderScreen(props) {
               {error && <MessageBox variant="danger">{error}</MessageBox>}
             </ul>
           </div>
+          <div className="col-3">
+            <button type="button" className="primary block"> Download</button>
+          </div>
         </div>
+
       </div>
     </div>
   );
